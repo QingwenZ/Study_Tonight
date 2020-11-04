@@ -4,149 +4,122 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Fruit Shopping</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
-      <style>
-          #date {
-              margin-left: 30px;
-              margin-top: 7px;
-              width: 150px;
-              height: 40px;
-          }
-          .row-right-1 {
-              margin-left: 20px;
-              margin-bottom: 10px;
-          }
-      
-          .row-right-2 {
-              margin-left: 20px;
-              margin-bottom: 20px;
-          }
-      
-          .row-main {
-              position: relative;
-              top: 50px;
-          }
-          #title-main {
-              padding: 10px
-          }
-      
-          #sidebar {
-              position: relative;
-              top: 80px;
-              min-width: 140px;
-              max-width: 140px;
-          }
-          #sidebar ul.components {
-              padding: 20px 0;
-          }
-          #sidebar ul p {
-              color: #fff;
-              padding: 10px;
-          }
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-          #sidebar ul li a {
-              padding: 10px;
-              font-size: 1.1em;
-              display: block;
-              margin-bottom: 10px;
-              text-align: right;
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
           }
-          #sidebar ul li a:hover {
-              color: #7386D5;
-              background: #fff;
-          }
-
-          #sidebar ul li.active > a, a[aria-expanded="true"] {
-              color: #fff;
-              background: #6d7fcc;
-          }
-          ul ul a {
-              font-size: 0.9em !important;
-              padding-left: 30px !important;
-              background: #6d7fcc;
-          }
-      </style>
+        }
+    </style>
+      <!-- Custom styles for this template -->
+    <link href="bootstrap/css/global.css" rel="stylesheet">
   </head>
+
+
   <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Username</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+        </ul>
+    </nav>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <div class="row row-main">
-        <div class="col-sm-3">
-            <!-- Sidebar -->
-            <nav id="sidebar">
-                <h5> User Account </h5>
-                <ul class="list-unstyled components">
-                    <li>
-                        <a class="btn btn-primary" href="#" role="button"> &lt Home</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-primary" href="#" role="button"> &lt Reviews</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="col-sm-9">
-            <div class="row row-right-0">
+    <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <span data-feather="home"></span>
+                    Shopping Cart <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="file"></span>
+                    Orders
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="bar-chart-2"></span>
+                    Reports
+                  </a>
+                </li>
+              </ul>
+      
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Saved reports</span>
+                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                  <span data-feather="plus-circle"></span>
+                </a>
+              </h6>
+              <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    Current month
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    Last quarter
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    Last year
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="col-sm-9">
+              <div class="row row-right-0">
                 <h3 id="title-main"> Your Last Shopping List </h3>
                 <input class="form-control input-sm" type="text" id="date" name="date" value="11-04-2020" readonly>
-            </div>
-            <div class="row row-right-1">
+              </div>
+              <div class="row row-right-1">
                 <a class="btn btn-primary mr-2" href="#" role="button"> New Shopping List </a>
                 <a class="btn btn-primary mr-2" href="#" role="button"> Search Previous Shopping List </a>
-            </div>
-            <div class="row row-right-2">
+              </div>
+              <div class="row row-right-2">
                 <a class="btn btn-primary mr-2" href="#" role="button"> Add </a>
                 <a class="btn btn-primary mr-2" href="#" role="button"> Delete </a>
                 <a class="btn btn-primary mr-2" href="#" role="button"> Edit </a>
+              </div>
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Store Name</th>
-                  <th scope="col">Product Name</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Ratings</th>
-                  <t>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>ALDI</td>
-                  <td>Gala Apples</td>
-                  <td>3</td>
-                  <td>$5.99</td>
-                  <td>4.0/5.0</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>ALDI</td>
-                  <td>Gala Apples</td>
-                  <td>3</td>
-                  <td>$5.99</td>
-                  <td>4.0/5.0</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>ALDI</td>
-                  <td>Gala Apples</td>
-                  <td>3</td>
-                  <td>$5.99</td>
-                  <td>4.0/5.0</td>
-                </tr>
-              </tbody>
-            </table>
+          </main>
         </div>
     </div>
+
+            
     <script>
         window.onload = function() {
             var d = new Date();
