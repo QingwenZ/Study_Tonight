@@ -86,13 +86,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span data-feather="file-text"></span>
-                    Last quarter
+                    This quarter
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span data-feather="file-text"></span>
-                    Last year
+                    This year
                   </a>
                 </li>
               </ul>
@@ -102,34 +102,107 @@
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="col-sm-9">
               <div class="row row-right-0">
-                <h3 id="title-main"> Your Last Shopping List </h3>
+                <h3 id="title-main"> Your Last Shopping Time </h3>
                 <input class="form-control input-sm" type="text" id="date" name="date" value="11-04-2020" readonly>
               </div>
               <div class="row row-right-1">
-                <a class="btn btn-primary mr-2" href="#" role="button"> New Shopping List </a>
+                <a class="btn btn-primary mr-2" href="#" role="button" onclick="document.getElementById('newListModal').style.display='block'"> New Shopping List </a>
                 <a class="btn btn-primary mr-2" href="#" role="button"> Search Previous Shopping List </a>
               </div>
-              <div class="row row-right-2">
-                <a class="btn btn-primary mr-2" href="#" role="button"> Add </a>
-                <a class="btn btn-primary mr-2" href="#" role="button"> Delete </a>
-                <a class="btn btn-primary mr-2" href="#" role="button"> Edit </a>
-              </div>
+              <div id="newListModal">
+                <form class="modal-content animate" onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Product Type </label>
+                        <select name="productType" id="productType">
+                            <option value="Apple">Apple</option>
+                            <option value="Avocado">Avocado</option>
+                            <option value="Banana">Banana</option>
+                            <option value="Blackberries">Blackberries</option>
+                            <option value="Blueberries">Blueberries</option>
+                            <option value="Strawberries">Strawberries</option>
+                            <option value="Cantaloupe">Cantaloupe</option>
+                            <option value="Cranberries">Cranberries</option>
+                            <option value="Grapes">Grapes</option>
+                            <option value="Kiwi">Kiwi</option>
+                            <option value="Lemon">Lemon</option>
+                            <option value="Mandarins">Mandarins</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Papaya">Papaya</option>
+                            <option value="Peach">Peach</option>
+                            <option value="Pineapple">Pineapple</option>
+                            <option value="Plum">)Plum</option>
+                            <option value="Raspberries">Raspberries</option>
+                            <option value="Raspberries">Raspberries</option>
+                            <option value="Watermellon">Watermellon</option>
+                        </select>
+                    </div>
+                    <div class="form-action-buttons">
+                        <a class="btn btn-primary mr-2" href="#" role="button" id="searchProduct" onclick="SearchFunction">Search Product</a>
+                    </div>
+                </form>
             </div>
-          </main>
+            <h2>Search Result</h2>
+            <table class="table">
+                <tr>
+                    <td>
+                        <table class="list" id="shoppingList">
+                            <thead>
+                            <tr>
+                                <th class="active">
+                                    <input type="checkbox" class="select-all checkbox" name="select-all" />
+                                </th>
+                                <th>Store Name</th>
+                                <th>Product Name</th>
+                                <th>Unit</th>
+                                <th>UnitPrice</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                    
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        <div>
+            <label>Input your Quantity Here</label>
+            <input type="text" name="quantity" id="quantity">
         </div>
-    </div>
 
-            
-    <script>
-        window.onload = function() {
-            var d = new Date();
+        <div class="row row-right-2">
+            <a class="btn btn-primary mr-2" href="#" role="button" id="AddItem" onclick="AddFunction()"> Add </a>
+            <a class="btn btn-primary mr-2" href="#" role="button" id="DeleteItem" onclick="DeleteFunction()"> Delete </a>
+            <a class="btn btn-primary mr-2" href="#" role="button" id="EditItem" onclick="EditFunction()"> Edit </a>
+        </div>
 
-            var month = d.getMonth()+1;
-            var day = d.getDate();
 
-            var output = d.getFullYear() + '/' + month + '/' + day;
-            document.getElementbyID("date").value = output;
-        }
-    </script>
-  </body>
+        <h2>Shopping List</h2>
+        <table class="table">
+            <tr>
+                <td>
+                    <table class="list" id="shoppingList">
+                        <thead>
+                        <tr>
+                            <th>Store Name</th>
+                            <th>Product Name</th>
+                            <th>Unit</th>
+                            <th>UnitPrice</th>
+                            <th>Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
 </html>
